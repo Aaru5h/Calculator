@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 60px);
+    gap: 10px;
+}
+
+.display {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.operator {
+    background-color: rgba(255, 207, 64, 0.8);
+    color: #333;
+}
+
+.operator:hover {
+    background-color: rgba(255, 207, 64, 1);
+}
+
+#clear {
+    background-color: rgba(255, 87, 87, 0.8);
+    color: white;
+}
+
+#clear:hover {
+    background-color: rgba(255, 87, 87, 1);
+}
+
+#delete {
+    background-color: rgba(64, 115, 255, 0.8);
+    color: white;
+}
+
+#delete:hover {
+    background-color: rgba(64, 115, 255, 1);
+}
+
+#equals {
+    background-color: rgba(76, 217, 100, 0.8);
+    color: white;
+}
+
+#equals:hover {
+    background-color: rgba(76, 217, 100, 1);
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: minmax(80px, auto) repeat(5, 50px);
+    }
+}
